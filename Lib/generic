@@ -1,0 +1,14 @@
+import hmac
+import hashlib
+
+# Define the key (seed for the current round)
+key = b"8Dkv048RuN3ESp9Z9TLYLveWzWew4M"  # This is your seed
+
+# Define the message (round ID for the next round, as an example)
+message = b"1641452"  # This should be the next round ID
+
+# Generate the HMAC-SHA256 hash using the key and the message
+hmac_result = hmac.new(key, message, hashlib.sha256).hexdigest()
+
+# Print the HMAC-SHA256 result (next round signal)
+print("HMAC-SHA256 for the next round:", hmac_result)
